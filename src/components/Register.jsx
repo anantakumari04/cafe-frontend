@@ -14,7 +14,7 @@ export default function Register() {
         // const url = "http://localhost:8080/api/users/register"  // to call end point for register which we have used in backend
         //waha se register function me jaa k waha ka code execute ho rha
 
-        const url = "cafe-backend-five.vercel.app/api/users/register" //live url of backend
+        const url = "https://cafe-backend-five.vercel.app/api/users/register" //live url of backend
 
         const result = await axios.post(url,user)  //axios return promise //user object me jo bhi h wo post ho jaega db me
 
