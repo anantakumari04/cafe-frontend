@@ -17,7 +17,7 @@ function App() {
         <h1>Cafe Frontend</h1>
         <Register />
         <h3>This is footer</h3>
-        <Register />
+        
       </>
    
     )
