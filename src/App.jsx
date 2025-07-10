@@ -5,6 +5,7 @@ import Home from './components/Home'
 import './App.css'
 import Temp from './components/Temp'
 import Register from './components/Register'
+import Login from './components/Login'
 
 function App() {
   
@@ -16,6 +17,7 @@ function App() {
         {/* <Temp flag /> */}
         <h1>Cafe Frontend</h1>
         <Register />
+        <Login />
         <h3>This is footer</h3>
         
       </>
