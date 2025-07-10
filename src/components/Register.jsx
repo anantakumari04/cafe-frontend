@@ -1,20 +1,24 @@
 import React, { useState } from 'react'
 import axios from 'axios';  //to call backend api
 
+
 export default function Register() {
 
     const[user, setUser] = useState({}) //curly braces means user is an object
 
     const [error, setError] = useState();
 
+    const API_URL = import.meta.env.VITE_API_URL //env se access krne k loye frontend me ye krte h
+
+
     
     const handleSubmit = async () =>{
 
       try{
-        // const url = "http://localhost:8080/api/users/register"  // to call end point for register which we have used in backend
+        const url = `${API_URL}/api/users/register`  // to call end point for register which we have used in backend
         //waha se register function me jaa k waha ka code execute ho rha
 
-        const url = "https://cafe-backend-five.vercel.app/api/users/register" //live url of backend
+        // const url = "https://cafe-backend-five.vercel.app/api/users/register" //live url of backend
 
         const result = await axios.post(url,user)  //axios return promise //user object me jo bhi h wo post ho jaega db me
 
