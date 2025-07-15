@@ -3,6 +3,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useRef } from "react";
 import axios from "axios";
+import { authorize } from "../../../cafe-backend/middlewares/auth";
 export default function Users() {
   const [users, setUsers] = useState([]);
   const [error, setError] = useState();
@@ -20,8 +21,6 @@ export default function Users() {
   const [limit, setLimit] = useState(2);
   const [editId, setEditId] = useState();
   const API_URL = import.meta.env.VITE_API_URL;
-
-  
   const fetchUsers = async () => {
     try {
       setError("Loading...");
@@ -63,7 +62,10 @@ export default function Users() {
     }
     try {
       const url = `${API_URL}/api/users`;
-      const result = await axios.post(url, form);
+
+      const result = await axios.post(url, form,{
+        headers:{Authorization:`Bearer ${user.token}`}
+      });
       setError("User added succesfully");
       fetchUsers();
       resetForm();
@@ -200,7 +202,7 @@ export default function Users() {
               <th>Role</th>
             </tr>
           </thead>
-          {Array.isArray(users) && users.map((value) => (
+          {users.map((value) => (
             <tbody key={value._id}>
               <tr>
                 <td>{value.firstName}</td>
