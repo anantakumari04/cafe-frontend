@@ -10,9 +10,7 @@ export default function Hero() {
         Welcome{user?.firstName ?`, ${user.firstName}!` : " to Our Cafe!"}
       </h2>
       <p>Enjoy the best coffee and snacks in town!</p>
-      <Link to="/Products" className="hero-button">
-        Explore Products
-      </Link>
+      
     </div>
   );
 }

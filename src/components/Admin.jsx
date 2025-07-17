@@ -1,12 +1,18 @@
 import React from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
+import "./admin.css";
+
 export default function Admin() {
   return (
-    <div>
-      <Link to="/admin">Users</Link>-
-      <Link to="/admin/products">Products</Link>-
-      <Link to="/admin/orders">Orders</Link>
-      <div>
+    <div className="admin-container">
+      <nav className="admin-nav">
+        <NavLink to="/admin" end>
+          Users
+        </NavLink>
+        <NavLink to="/admin/products">Products</NavLink>
+        <NavLink to="/admin/orders">Orders</NavLink>
+      </nav>
+      <div className="admin-content">
         <Outlet />
       </div>
     </div>

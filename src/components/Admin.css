@@ -1,0 +1,59 @@
+/* admin.css - Coffee Theme */
+
+.admin-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #fdf6f0; /* creamy coffee background */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(111, 78, 55, 0.15);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #4b2e2e; /* mocha brown text */
+}
+
+.admin-nav {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.admin-nav a {
+  color: #6f4e37; /* warm coffee brown */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #fff3e6; /* light creamy background */
+  box-shadow: 0 2px 6px rgba(139, 69, 19, 0.1);
+}
+
+.admin-nav a:hover,
+.admin-nav a.active {
+  background-color: #a97449; /* caramel */
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
+}
+
+.admin-content {
+  background-color: #fff8f1;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(111, 78, 55, 0.15);
+  min-height: 400px;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 600px) {
+  .admin-nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .admin-nav a {
+    font-size: 16px;
+    padding: 10px;
+  }
+}

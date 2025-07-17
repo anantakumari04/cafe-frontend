@@ -1,14 +1,15 @@
-import React, { useContext } from "react";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import { AppContext } from "../App";
+import "./Login.css";
+
 export default function Login() {
-  const {user, setUser} = useContext(AppContext);
+  const { user, setUser } = useContext(AppContext);
   const [error, setError] = useState();
   const Navigate = useNavigate();
   const API_URL = import.meta.env.VITE_API_URL;
+
   const handleSubmit = async () => {
     try {
       const url = `${API_URL}/api/users/login`;
@@ -20,10 +21,12 @@ export default function Login() {
       setError("Something went wrong");
     }
   };
+
   return (
-    <div>
-      <h2>Login</h2>
-      {error}
+    <div className="login-container">
+      <h2 className="login-title">Coffee Login</h2>
+      {error && <div className="error-message">{error}</div>}
+
       <p>
         <input
           type="text"
@@ -39,7 +42,7 @@ export default function Login() {
         />
       </p>
       <p>
-        <button onClick={handleSubmit}>Submit</button>
+        <button onClick={handleSubmit}>Login</button>
       </p>
       <hr />
       <Link to="/register">Create Account</Link>
