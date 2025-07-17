@@ -13,6 +13,7 @@ import Profile from "./components/Profile";
 import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Products from "./components/Products";
+import Hero from "./components/Hero";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import "./App.css";
 export const AppContext = createContext();
@@ -24,6 +25,7 @@ function App() {
       <AppContext.Provider value={{ cart, setCart, user, setUser }}>
         <BrowserRouter>
           <Header />
+          <Hero />
           <Routes>
             <Route index element={<Product />} />
             <Route path="login" element={<Login />} />
